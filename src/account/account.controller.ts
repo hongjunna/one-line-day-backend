@@ -6,12 +6,12 @@ import { RegisterDto } from './dto/register.dto';
 export default class AccountController {
   @Post('login')
   async login(@Body() loginDto: LoginDto) {
-    // Logic for handling login
-    return { message: 'Login successful', user: loginDto.username };
+    const userName = loginDto.username;
+    return userName;
   }
   @Post('register')
   async register(@Body() registerDto: RegisterDto) {
-    // Logic for handling registration
-    return { message: 'Registration successful', user: registerDto.username };
+    const userName = registerDto.username;
+    return `${userName} 님 회원가입이 완료되었습니다.`;
   }
 }
